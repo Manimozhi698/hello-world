@@ -1,0 +1,87 @@
+<html>
+<head>
+
+<style>
+h1{
+text-align:center;
+color:blue;
+}
+h2{
+text-align:center;
+color:green;
+}
+ul{
+display:none;
+}
+
+</style>
+
+
+
+</head>
+<body>
+<h1><center>PALAZO FOODCOURT</center></h1>
+<h2><center>WELCOME ALL!!!!</center></h2>
+
+<form action="#">
+Delicious Side Dishes:<input type="button" value="Click" onclick="menu()"/>
+<h3>Place your order</h3>
+Food Items :<input type="checkbox" id="a" name="food" value="Mushroom" onclick="order(this.id)"unchecked>1</input><br>
+      <input type="checkbox"  id="b" name="food" value="Panneer"  onclick="order(this.id)"unchecked>2</input><br>
+      <input type="checkbox"  id="c" name="food" value="Briyani"   onclick="order(this.id)"unchecked>3</input><br>
+      <input type="checkbox" id="d" name="food" value="Mutton"   onclick="order(this.id)"unchecked>4</input><br>
+       
+      <input type="checkbox" id="e" name="food" value="Fish fry"   onclick="order(this.id)"unchecked>5</input><br>
+      
+
+
+<input type="submit" value="Order" onclick="details()">
+
+</form>
+<ul id="c">Summary Of Your Order:</ul>
+<script>
+function menu()
+{
+document.write("1.Gopi Manchurian<br>");
+document.write("2.Panneer<br>");
+document.write("3.Soup<br>");
+document.write("4.Salad<br>");
+document.write("5.Juice<br>");
+
+
+
+}
+
+function order(elementId)
+{
+var checkbox=document.getElementById(elementId);
+if(checkbox.checked)
+{
+var t=checkbox.value
+add(t)
+}
+}
+
+
+function add(val)
+{
+var l=document.getElementById("c");
+var h=document.createElement('li');
+h.appendChild(document.createTextNode(val))
+l.appendChild(h)
+}
+
+function details()
+{
+var list=document.getElementById("c");
+list.style.display="block";
+}
+
+
+
+
+</script>
+
+</body>
+</html>
+
